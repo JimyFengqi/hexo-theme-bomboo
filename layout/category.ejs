@@ -64,6 +64,8 @@ var i = 0;
   <div class="category-name">
     <div class="name" style="background-color: <%- color %>;"><%= page.category %> <%= __('category') %></div>
   </div>
+
+  <%- partial('_partial/category/category-cloud') %>
   <!-- 每一篇文章卡片 -->
   <%- partial('_partial/card/post') %>
 </div>

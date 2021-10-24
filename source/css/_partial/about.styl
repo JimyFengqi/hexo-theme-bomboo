@@ -148,6 +148,7 @@
   }
 
   .subtitle {
+    text-align: center;
     color: #273849;
     font-size: 1.4em;
   }
@@ -181,7 +182,50 @@
         }
       }
     }
-
+    .projects {
+      padding: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      padding: 3.8rem 1.5rem 0.8rem 1.5rem;
+      .info {
+        max-width: 360px;
+        margin: 0 auto;
+        padding: 1rem 0 1rem;
+        text-align: center;
+        .icon {
+            display: inline-block;
+            width: 76px;
+            height: 76px;
+            text-align: center;
+            line-height: 76px;
+            color: #fff;
+            font-size: 1.75rem;
+            border-radius: 50%;
+        }
+        .icon {
+            display: inline-block;
+            width: 76px;
+            height: 76px;
+            text-align: center;
+            line-height: 76px;
+            color: #fff;
+            font-size: 1.75rem;
+            border-radius: 50%;
+        }
+        .info-title {
+            margin: 1.25rem 0 0.875rem;
+            font-size: 1.25rem;
+            font-weight: 500;
+            line-height: 1.5em;
+        }
+        .info-desc {
+            margin: 0 0 10px;
+            font-size: 0.9rem;
+            color: #999;
+            max-width: 280px;
+        }
+      }
+    }
     .skill {
       padding: 20px;
       width: 100%;
@@ -232,6 +276,31 @@
           top: 0;
         }
       }
+    }
+
+    .other-skills {
+        padding: 20px;
+        display: flex;
+        flex-wrap: wrap;
+
+        .tag-chips {
+            max-width: 600px;
+            padding: 10px 5px;
+            margin: 10px 5px;
+            .chip {
+                background-color: #fff;
+                border: 1px solid #eee;
+                padding: 10px 14px;
+                margin: 5px 5px;
+                border-radius: 5px;
+            }
+            .chip:hover {
+                color: #fff;
+                background: linear-gradient(to right, #4cbf30 0%, #0f9d58 100%);
+                border: 1px solid #4cbf30;
+                box-shadow: 0 5px 5px rgba(0, 0, 0, .25)
+            }
+        }
     }
 
     .socialAccounts {

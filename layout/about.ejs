@@ -1,6 +1,8 @@
 <%
 // the skills information of theme _config.yml.
+var projects = theme.projects.data || {};
 var skills = theme.skills.data || {};
+var topSkillArr = [];
 var socialAccounts = theme.socialAccounts.data || {};
 var games = theme.games.data || {};
 var books = theme.books.data || {};
@@ -50,10 +52,11 @@ var books = theme.books.data || {};
 	<div class="title">
 		<i class="fas fa-user" aria-hidden="true"></i>&nbsp;&nbsp;<%= __('about') %>
 	</div>
+	<%- partial('_partial/archive/post-charts') %>
 	<% if(theme.baseInfo.on) { %>
 	<div class="basic-info reveal">
 		<div class="subtitle">
-			<i class="fas fa-address-card-o" aria-hidden="true"></i>&nbsp;&nbsp;<%= __('aboutBasicInfo') %>
+			<i class="fas fa-address-card" aria-hidden="true"></i>&nbsp;&nbsp;<%= __('aboutBasicInfo') %>
 		</div>
 		<div class="items">
 			<div class="item">
@@ -94,6 +97,30 @@ var books = theme.books.data || {};
 		</div>
 	</div>
 	<% } %>
+	<% if(theme.projects.on) { %>
+    <div class="basic-info reveal">
+        <div class="subtitle">
+            <i class="fas fa-gift" aria-hidden="true"></i>&nbsp;&nbsp;<%= __('projects') %>
+        </div>
+        <div class="row projects">
+                <% Object.keys(projects).forEach(function(project) { %>
+                <div class="col s12 m6 l4 reveal" >
+                    <div class="info center-align reveal">
+                        <a href="<%- projects[project].url %>" class="icon"
+                           style="background: <%- projects[project].iconBackground %>" target="_blank">
+                            <i class="<%- projects[project].icon %>"></i>
+                        </a>
+                        <div class="info-title">
+                            <a href="<%- url_for(projects[project].url) %>" target="_blank"><%- project %></a>
+                        </div>
+                        <div class="info-desc"><%= projects[project].desc %></div>
+                    </div>
+                </div>
+                <% }); %>
+
+        </div>
+    </div>
+	<% } %>
 	<% if(theme.skills.on) { %>
 	<div class="basic-info reveal">
 		<div class="subtitle">
@@ -101,6 +128,7 @@ var books = theme.books.data || {};
 		</div>
 		<div class="skill">
 			<% Object.keys(skills).forEach(function(skill) { %>
+			<% topSkillArr.push(skill); %>
 			<div class="bar-box">
 				<span class="bar-name"><%- skill %></span>
 				<div class="bar" style="background: <%- skills[skill].background %>; width: <%- skills[skill].percent %>"></div>
@@ -110,34 +138,52 @@ var books = theme.books.data || {};
 		</div>
 	</div>
 	<% } %>
+
+	<%
+    /**
+     * Determine if an element is included in the array.
+     *
+     * @param arr array
+     * @param value value
+     */
+    var isInArray = function (arr, value) {
+        for (var i = 0; i < arr.length; i++) {
+            if (value == arr[i]) {
+                return true;
+            }
+        }
+        return false;
+    }
+    %>
+
+    <% if (site.tags) { %>
+    <div class="basic-info reveal ">
+        <div class="subtitle ">
+            <i class="fa fa-wrench"></i>&nbsp;&nbsp;<%- __('otherSkills') %>
+        </div>
+        <div class="other-skills">
+            <% site.tags.map(function(tag) { %>
+            <% if (!isInArray(topSkillArr, tag.name)) { %>
+
+                <a class="tag-chips" href="<%- url_for(tag.path) %>">
+                    <span class="chip center-align waves-effect waves-light chip-default"><%- tag.name %></span>
+                </a>
+
+            <% } %>
+            <% }); %>
+        </div>
+    </div>
+    <% } %>
+
 	<% if(theme.socialAccounts.on) { %>
 	<div class="basic-info reveal">
 		<div class="subtitle">
-			<i class="fas fa-chain-broken" aria-hidden="true"></i>&nbsp;&nbsp;<%= __('socialAccounts') %>
+			<i class="fas fa-wrench" aria-hidden="true"></i>&nbsp;&nbsp;<%= __('socialAccounts') %>
 		</div>
 		<div class="socialAccounts">
 			<% Object.keys(socialAccounts).forEach(function(socialAccount) { %>
 				<div class="account">
 					<i class="<%- socialAccounts[socialAccount].icon %>" aria-hidden="true"></i> <%- socialAccount %>：<a href="<%- socialAccounts[socialAccount].url %>"><%- socialAccounts[socialAccount].name %></a> 
-				</div>
-			<% }); %>
-		</div>
-	</div>
-	<% } %>
-	<% if(theme.games.on) { %>
-	<div class="basic-info reveal">
-		<div class="subtitle">
-			<i class="fas fa-gamepad" aria-hidden="true"></i>&nbsp;&nbsp;<%= __('game') %>
-		</div>
-		<div class="games">
-			<% Object.keys(games).forEach(function(game) { %>
-				<div class="game-item">
-					<div class="logo">
-						<img src="<%- games[game].img %>" alt="">
-					</div>
-					<div class="name">
-						<%- game %>
-					</div>
 				</div>
 			<% }); %>
 		</div>
@@ -156,6 +202,25 @@ var books = theme.books.data || {};
 					</div>
 					<div class="name">
 						<%- book %>
+					</div>
+				</div>
+			<% }); %>
+		</div>
+	</div>
+	<% } %>
+	<% if(theme.games.on) { %>
+	<div class="basic-info reveal">
+		<div class="subtitle">
+			<i class="fas fa-gamepad" aria-hidden="true"></i>&nbsp;&nbsp;<%= __('game') %>
+		</div>
+		<div class="games">
+			<% Object.keys(games).forEach(function(game) { %>
+				<div class="game-item">
+					<div class="logo">
+						<img src="<%- games[game].img %>" alt="">
+					</div>
+					<div class="name">
+						<%- game %>
 					</div>
 				</div>
 			<% }); %>

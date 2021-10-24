@@ -24,10 +24,13 @@ age: 年齡
 sex: 性别
 coordinate: 坐標
 status: 狀態
+projects: 項目
 skill: 技能
+otherSkills: 其他技能
 socialAccounts: 社交賬號
 game: 遊戲
 book: 書籍
+gallery: 相冊
 Menu:
   Home: 首頁
   Archives: 歸檔
@@ -35,7 +38,7 @@ Menu:
   Categories: 分類
   Github: Github
   About: 關於
-  link: 友情鏈接
+  link: 友鏈
 
 Paginator:
   Prev: 上壹頁
@@ -51,7 +54,7 @@ copyright:
     left_license_content: "本網站所有文章除特別聲明外,均采用 "
     right_license_content: "許可協議。轉載請註明出處!"
 
-friends: 友情鏈接
+friends: 友鏈
 keyword: 請輸入關鍵字
 reading: 閱讀量
 totalVisits: 本站總訪問量
@@ -76,3 +79,21 @@ no_title: 暫無標題
 side:
   side_archives: '歸檔'
   more_button: '更多'
+categoryRadarTitle: 文章分類雷達圖
+categoryNumber: 文章分類數量
+categoryEmptyTip: 你目前還沒有對文章進行分類.
+postCharts: 文章統計圖
+postPublishChart: 文章發布統計圖
+categoriesChart: 文章分類統計圖
+top10TagsChart: TOP10 標籤統計圖
+postsNumberName: 文章篇數
+maximum: 最大值
+minimum: 最小值
+average: 平均值
+notag: 無標籤
+from: 來源
+reprint: 版權聲明
+author: 文章作者
+link: 文章連結
+use: 本部落格所有文章除特別聲明外，均採用
+licensed: 許可協議。轉載請註明來源

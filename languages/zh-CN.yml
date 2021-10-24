@@ -24,10 +24,13 @@ age: 年龄
 sex: 性别
 coordinate: 坐标
 status: 状态
+projects: 项目
 skill: 技能
+otherSkills: 其他技能
 socialAccounts: 社交账号
 game: 游戏
 book: 书籍
+gallery: 相册
 Menu:
   Home: 首页
   Archives: 归档
@@ -35,7 +38,7 @@ Menu:
   Categories: 分类
   Github: Github
   About: 关于
-  link: 友情链接
+  link: 友链
 
 Paginator:
   Prev: 上一页
@@ -51,7 +54,7 @@ copyright:
     left_license_content: "本网站所有文章除特别声明外,均采用 "
     right_license_content: "许可协议。转载请注明出处!"
 
-friends: 友情链接
+friends: 友链
 keyword: 请输入关键字
 reading: 阅读量
 totalVisits: 本站总访问量
@@ -76,3 +79,23 @@ no_title: 暂无标题
 side:
   side_archives: '归档'
   more_button: '更多'
+categoryRadarTitle: 文章分类雷达图
+categoryNumber: 文章分类数量
+categoryEmptyTip: 你目前还没有对文章进行分类.
+postCharts: 文章统计图
+postPublishChart: 文章发布统计图
+categoriesChart: 文章分类统计图
+top10TagsChart: TOP10 标签统计图
+postsNumberName: 文章篇数
+maximum: 最大值
+minimum: 最小值
+average: 平均值
+
+
+notag: 无标签
+from: 来源
+reprint: 版权声明
+author: 文章作者
+link: 文章链接
+use: 本博客所有文章除特別声明外，均采用
+licensed: 许可协议。转载请注明来源

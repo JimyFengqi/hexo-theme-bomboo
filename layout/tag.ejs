@@ -65,6 +65,9 @@ var i = 0;
   <div class="tag-name">
     <div class="name" style="background-color: <%- color %>;"><%= page.tag %> <%= __('category') %></div>
   </div>
+
+  <%- partial('_partial/tag/tag_cloud') %>
+
   <!-- 每一篇文章卡片 -->
   <%- partial('_partial/card/post') %>
 </div>
