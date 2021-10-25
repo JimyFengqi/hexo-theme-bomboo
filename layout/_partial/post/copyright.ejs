@@ -1,7 +1,12 @@
 <div class="copyright">
   <ul class="post-copyright">
     <li class="post-copyright-author">
-    <strong><%= __('copyright.author') %> </strong><%= config.author%></a>
+    <strong><%= __('copyright.author') %>
+    <% if (page.author) { %>
+        </strong><%- page.author %></a>
+    <% } else { %>
+        </strong><%= config.author%></a>
+    <% } %>
     </li>
     <li class="post-copyright-link">
     <strong><%= __('copyright.link') %> </strong>

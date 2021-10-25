@@ -33,10 +33,10 @@ menu:
        url: /gallery
        icon: fas fa-image
      - name: 书单
-       url: /gallery
-       icon: fas fa-image
-     - name: 收藏夹
-       url: http://baidu.com
+       url: /books
+       icon: fas fa-book
+     - name: 网站收藏
+       url: /website
 
 
 # github地址, 头部导航右上角的github链接
@@ -195,9 +195,9 @@ swiper:
   defaultTile: '青墨书晚风' # 标题
   defaultDesc: ['煮酒洗净尘嚣，论知交', '万般付之一笑，共偕老']  # 描 述，例如 ['煮酒洗净尘嚣，论知交', '万般付之一笑，共偕老']
   defaultLeftBtnText: '阅读文档' # 左边按钮文字, 空字符串则不显示
-  defaultLeftBtnLink: 'post/本站介绍/Bamboo主题介绍.md' # 左边按钮链接
+  defaultLeftBtnLink: 'post/ben-zhan-jie-shao/zhu-ti-jie-shao-ji-ben-pei-zhi' # 左边按钮链接
   defaultRightBtnText: '下载主题' # 右边按钮的文字，空字符串则不显示
-  defaultRightBtnLink: 'https://gitee.com/yuang01/hexo-theme-bamboo/repository/archive/dev.zip' # 右边的按钮的链接
+  defaultRightBtnLink: 'https://github.com/jimyfengqi/hexo-theme-boamboo/repository/archive/dev.zip' # 右边的按钮的链接
   defaultDescTyped: true # defaultDesc文字是否开启打字特效  is typed
   defaultDescTypedSpeed: 100 # defaultDesc 打字速度, typed typeSpeed
   defaultDescTypedBackSpeed: 50 # defaultDesc 打字返回速度 typed backSpeed
@@ -330,7 +330,7 @@ baiduPush: true
 # 文章目录
 toc:
   on: true # 是否显示
-  heading: h2, h3, h4
+  heading: h1, h2, h3, h4
   open: true # 是否展开，false则收缩
   showBtn: true # 是否显示展开收缩按钮
   showOrderNumber: true # 是否显示序号
@@ -342,7 +342,6 @@ music:
   #  server: tencent   #require	music platform: netease, tencent, kugou, xiami, baidu
   #  type: playlist    #require song, playlist, album, search, artist
   #  id: 8062553743     #require	song id / playlist id / album id / search keyword
-  source_length: 10
   source:
     - server: netease     # 歌手-张卫-脱胎换骨
       id: 1365053719
@@ -537,6 +536,10 @@ notice:
       date: '2021-10-20'
       url: '/'   # 可以为空, 也可以是本地页面地址如 '/archives'
       color: red   # 字体颜色
+    - title: '#添加本站介绍'
+      date: '2021-10-25'
+      url: 'post/ben-zhan-jie-shao/zhu-ti-jie-shao-ji-ben-pei-zhi'   # 可以为空, 也可以是本地页面地址如 '/archives'
+      color: blue   # 字体颜色
 
 # 文章置顶
 topArticle:
@@ -608,7 +611,7 @@ gitalk:
 # utterance 评论
 utterance:
   on: true
-  # 仓库名字，格式：你的用户 ID/ 仓库名称，如：yuang01/yuang01.github.io
+  # 仓库名字，格式：你的用户 ID/ 仓库名称，如：jimyfengqi/jimyfengqi.github.io
   repo:
   # 主题
   theme:
@@ -757,7 +760,10 @@ color_scheme:
     # 如果背景只想要一个图片：可以使用 ['http://xxxxxx'] 或者 'http://xxxxxxx'，这样的写法, 图片地址也可以是本地路径('/img/xxx.png' or '/medias/xxx.png')
     # 也可以是颜色字符串（例如'#C7EDCC', 或者rgba(0 ,0 ,0, 0.8) 那么会使用该颜色作为背景）
     # 空字符串则背景颜色为透明
-    bgImg: ''
+    bgImg: [
+        'https://pic4.zhimg.com/80/v2-5030587bac1b856d09e0a119ff6d7c04_1440w.jpg',
+        'https://api.btstu.cn/sjbz/api.php'
+    ]
     # 背景图幻灯片模式--延迟时间
     # 如果bgImg设置为数组，数组里面是多个图片地址,则 bgImgDelay表示背景图幻灯片的 延迟间隔时间
     bgImgDelay: 180000 # 默认三分钟，切换一张图片
@@ -792,10 +798,10 @@ site_footer:
     - on: true
       owner: 枫奇丶宛南
       url: https://jimyfengqi.github.io
-  cnzz:
+  cnzz: #友盟统计
     - cnzzID: 1280461850
   icp:  #ICP备案信息尾部显示
-    - on: true
+    - on: false
       url: www.fake.com # 备案链接
       text: 这是一个虚假点备案信息 # 备案信息
   custom: # 根据需要自行取消注释，label: 'markdown格式'，会在下面继续增加内容
