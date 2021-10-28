@@ -53,7 +53,7 @@ favicon: /favicon.ico # or .png .jpg .svg .gif .jpeg .ico
 # sidebar侧边栏
 sidebar:
   on: true # 开启侧边栏
-  position: left # left right
+  position: right # left right
   widget_library:
     side_blogger:
       on: true
@@ -278,7 +278,7 @@ ribbon:
 # live-2d(左下角动画人物)
 live2d:
   on: true # 控制显示或者隐藏
-  modelId:  # 0 or 1 or 2 or 3 or 4 or 5 or 6
+  modelId: 3  # 0 or 1 or 2 or 3 or 4 or 5 or 6
   open: true # 默认展开，false则收缩，通过点左下角的方块点击，控制展开或者收缩
 
 # 首页雪花飘落效果--冬天
@@ -520,7 +520,7 @@ copyright:
 
 # 首页座右铭
 motto:
-  on: true
+  on: false
   title: '座右铭'
   content: '沉淀后我愿意做个温暖的人，有自己的喜好，有自己的原则，有自己的信仰，不急功近利，不浮夸轻薄。宠辱不惊，淡定安逸，心静如水，不忘初心，方得始终。——凌茜'
   background: 'url("https://img10.360buyimg.com/ddimg/jfs/t1/166587/8/21344/72069/6088c24fEda5fdeb6/f9730ab637b7ca47.png")' # url("xxx") or red or #000 or rgba() ..
@@ -890,12 +890,14 @@ wordcount:
 import:
   link:
     # - <link src"xxx.css"></link>
+    - <link src="/js/aos/aos@2.3.4.min.css"></link>
     -
     -
   script:
     # - <script src="xxx.js"></script>
-    -
-    -
+    - <script src="/js/tag_cloud.js" ></script>
+    - <script src="/js/echarts/echarts@5.2.1.min.js"></script>
+    - <script src="/js/aos/aos@2.3.4.min.js"></script>
 
 # 文章图片,不指定 img:xxx 的时候随机取下面的图片
 imgs:

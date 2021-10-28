@@ -22,16 +22,16 @@
             <% }) %>
           </div>
         <% } else if (item == 'busuanzi') {  %>
-            <!-- 不蒜子 -->
+            <!-- 不蒜子统计 -->
             <%- partial('_partial/footer/busuanzi') %>
         <% } else if (item == 'cnzz') {  %>
-            <!-- 友盟+ -->
+            <!-- [CNZZ友盟+]统计 -->
             <%- partial('_partial/footer/youmeng') %>
         <% } else if (item == 'copyright') {  %>
            <%- partial('_partial/footer/copyright') %>
         <% } else if (item == 'icp') {  %>
-            <!-- 备案信息+ -->
-            <%- partial('_partial/footer/icp') %>
+             <!-- 备案信息+ -->
+             <%- partial('_partial/footer/icp') %>
         <% } else if (item == 'custom') { %>
           <div class="footer-custom">
             <% (theme.site_footer.custom||[]).forEach(function(item) { %>
